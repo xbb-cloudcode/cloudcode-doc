@@ -51,4 +51,4 @@ docker run -itd -p 3000:3000 -v 云函数代码绝对路径:/var/fc/runtime/node
 在前端项目中指定`window.FC_ENV = 'dev'`即可使用本地的环境
 #### 部署到云函数
 当本地调试完成后就可以部署到云函数上使用了，首先将云函数压缩(需要包含`node_modules`目录)成zip压缩包，在云叩平台上传即可。
-![deploy_function](/images/deploy_function.png)
+![deploy_function](/cloudcode-doc/images/deploy_function.png)
