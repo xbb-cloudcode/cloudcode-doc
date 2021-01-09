@@ -20,7 +20,7 @@ yunkou init
 普通`HTML`模板，不使用打包工具，但为了本地调试方便，预先安装了`webpack-dev-server`
 
 以vue不带router模板为例:
-[![asciicast](https://asciinema.org/a/132560.png)](https://asciinema.org/a/132560)
+[![asciicast](https://asciinema.org/a/hWhco38ereYTOsDFwzJ4eWKt5.svg)](https://asciinema.org/a/hWhco38ereYTOsDFwzJ4eWKt5)
 
 3. 启动项目
 ```shell

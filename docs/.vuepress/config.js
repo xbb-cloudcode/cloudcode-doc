@@ -2,7 +2,7 @@
  * @Author: jinhui.li
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
- * @LastEditTime: 2021-01-08 11:20:02
+ * @LastEditTime: 2021-01-09 14:01:08
  * @Description: 
  */
 module.exports = {
@@ -20,6 +20,8 @@ module.exports = {
       '/guide/': [
         '',
         'quick_start',
+        'host_environment',
+        'use_sdk',
       ],
       '/cloud-dev/': [
         '',
