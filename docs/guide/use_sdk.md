@@ -36,7 +36,7 @@ npm i xbb-sdk -S
 #### 返回值
 #### Promise
 
-### xbb.sendMessage(Object object
+### xbb.sendMessage(Object object)
 > 向销帮帮CRM发送消息
 #### 参数
 #### Object object
