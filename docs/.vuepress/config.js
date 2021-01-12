@@ -2,7 +2,7 @@
  * @Author: jinhui.li
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
- * @LastEditTime: 2021-01-09 14:01:08
+ * @LastEditTime: 2021-01-12 10:20:33
  * @Description: 
  */
 module.exports = {
@@ -13,6 +13,7 @@ module.exports = {
     logo: '/logo.png',
     nav: [
       { text: '指南', link: '/guide/' },
+      { text: '服务端', link: '/server-side/' },
       { text: '云开发', link: '/cloud-dev/' },
     ],
     lastUpdated: '上次更新时间',
@@ -23,9 +24,13 @@ module.exports = {
         'host_environment',
         'use_sdk',
       ],
+      '/server-side/': [
+        ''
+      ],
       '/cloud-dev/': [
         '',
-        'first_function'
+        'first_function',
+        'func_environment'
       ],
     }
   }
