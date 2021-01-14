@@ -16,7 +16,7 @@ npm i xbb-sdk -S
 > 获取用户信息
 #### 参数
 #### 返回值
-#### Object
+#### Promise
 ```javascript
 {
   userId, // 用户的userid
@@ -25,13 +25,19 @@ npm i xbb-sdk -S
 ```
 
 ### xbb.useComponent(Object object)
-> 调用销帮帮CRM系统组件，开发中...
+> 调用销帮帮CRM系统组件
 #### 参数
 #### Object object
-| 属性 | 类型 | 默认值 | 必填 | 说明 |
-| --- | --- | ----- | ---- | --- |
-| name | String | | 是 | 调用的组件名称 |
-| data | Object | | 否 | 传递给组件的数据 |
+| 属性 | 类型 | 必填 | 说明 |
+| --- | --- |  ---- | --- |
+| action | String | 是 | 调用的组件名称 |
+| data | Object | 否 | 传递给组件的数据 |
+
+目前支持调用的组件如下:
+| action | data | 说明 |
+| ------ | ---- | --- |
+| openDetailPage | {appId, dataId, saasMark, businessType, subBusinessType} | 调用详情页 |
+
 
 #### 返回值
 #### Promise
