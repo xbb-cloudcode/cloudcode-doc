@@ -2,7 +2,7 @@
  * @Author: jinhui.li
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
- * @LastEditTime: 2021-01-12 10:20:33
+ * @LastEditTime: 2021-01-14 09:42:35
  * @Description: 
  */
 module.exports = {
@@ -30,7 +30,8 @@ module.exports = {
       '/cloud-dev/': [
         '',
         'first_function',
-        'func_environment'
+        'func_environment',
+        'use_sdk'
       ],
     }
   }
