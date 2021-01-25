@@ -46,7 +46,7 @@ callback是由系统定义的函数，作为入口函数的入参用于返回调
 在本地为了方便开发者调试，我们使用Docker模拟了线上的serverless环境，其中包含云函数、云数据库和云存储的运行环境。
 ```shell
 docker pull registry.cn-hangzhou.aliyuncs.com/musii/cc-serverless-sandbox:latest # 拉取镜像
-docker run -itd -p 3000:3000 -v 云函数代码绝对路径:/var/fc/runtime/nodejs12/code cc-serverless-sandbox:latest # 运行docker
+docker run -itd -p 3000:3000 -v 云函数代码绝对路径:/var/fc/runtime/nodejs12/code registry.cn-hangzhou.aliyuncs.com/musii/cc-serverless-sandbox:latest # 运行docker
 ```
 在前端项目中指定`window.FC_ENV = 'dev'`即可使用本地的环境
 #### 部署到云函数
