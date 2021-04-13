@@ -24,6 +24,7 @@ module.exports = {
         'quick_start',
         'host_environment',
         'use_sdk',
+        'use_platform'
       ],
       '/server-side/': [
         ''
