@@ -2,7 +2,7 @@
  * @Author: jinhui.li
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
- * @LastEditTime: 2021-01-14 09:42:35
+ * @LastEditTime: 2021-04-13 21:49:28
  * @Description: 
  */
 module.exports = {
@@ -15,6 +15,7 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: '服务端', link: '/server-side/' },
       { text: '云开发', link: '/cloud-dev/' },
+      { text: '低代码', link: '/lowcode/' },
     ],
     lastUpdated: '上次更新时间',
     sidebar: {
@@ -32,6 +33,9 @@ module.exports = {
         'first_function',
         'func_environment',
         'use_sdk'
+      ],
+      '/lowcode/': [
+        ''
       ],
     }
   }
