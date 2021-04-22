@@ -25,12 +25,12 @@ export function exampleGetValue () {
 // res 数据格式：
 res = {
   success: true,   // Boolean
-  value: 'value',  // 字段的值
+  value: 'value',  // 字段的值 String/Number/Object
   error: null      // 方法调用报错信息，未报错时为 null
 }
 ```
 
-- setValue(fieldId, value)
+## setValue(fieldId, value)
 
 > 设置表单字段值
 
@@ -43,6 +43,21 @@ value 字段值
 **返回值**
 
 **Promise**
+
+基本示例
+
+```js
+export function exampleSetValue () {
+  sdk.setValue('text_1', 'value').then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
 
 
 
@@ -65,6 +80,26 @@ Object params
 
 **Promise**
 
+基本示例
+
+```js
+export function exampleSetSubformValue () {
+  sdk.setSubformValue({
+    formId: 'subForm_1',
+    row: 0,
+    fieldId: 'num_1',
+    value: 0.0337999
+  }).then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
+
 
 
 ## getSubformValue(params)
@@ -85,11 +120,31 @@ Object params
 
 **Promise value 字段值**
 
+示例代码
+
+```js
+export function exampleGetSubformValue () {
+  sdk.getSubformValue({
+        formId: 'subForm_1',
+        row: 0,
+        fieldId: 'text_1',
+    }).then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  value: 'value',  // String/Number
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
+
 
 
 ## addSubformRow(formId)
 
-> 新建一条子表单数据
+> 新建一条子表单空数据
 
 **参数**
 
@@ -98,6 +153,21 @@ formId 子表单唯一id
 **返回值**
 
 **Promise**
+
+示例代码
+
+```js
+export function exampleAddSubformRow () {
+  sdk.addSubformRow('subForm_1').then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
 
 
 
@@ -113,6 +183,21 @@ fieldId 字段唯一id
 
 **Promise**
 
+示例代码
+
+```js
+export function exampleDisableField () {
+  sdk.disableField('text_1').then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
+
 
 
 ## enableField(fieldId)
@@ -127,6 +212,20 @@ fieldId 字段唯一id
 
 **Promise**
 
+示例代码
+
+```js
+export function exampleEnableField() {
+  sdk.enableField('text_1').then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null      // 方法调用报错信息，未报错时为 null
+}
+```
 
 
 ## showToast(info)
@@ -146,6 +245,24 @@ Object info
 **返回值**
 
 **Promise**
+
+示例代码
+
+```js
+export function examplShowToast() {
+  sdk.showToast({
+    type: 'success',
+    content: '这是内容',
+    time: 3000
+  }).then(res => {
+    doSomeThings(res)
+  })
+}
+// res 数据格式：
+res = {
+  success: true   // Boolean
+}
+```
 
 
 # 代码实践
@@ -199,4 +316,9 @@ Object info
 ### 效果展示
 
 ![示例步骤—4](/images/lowcode_example_5.gif)
+
+## 提示
+
+**低代码具有需要具备一定的开发能力，并且，低代码的权限高于系统的定义的一些限制（当系统本身的逻辑执行完成后才会执行低代码的逻辑），所以请合理正确的使用低代码功能，使用者请具备一定的JavaScript语言的开发能力。否则，会导致表单数据错误的表现。有问题时请积极联系销帮帮CRM官方人员。**
+
 
