@@ -2,7 +2,7 @@
  * @Author: jinhui.li
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
- * @LastEditTime: 2021-04-16 09:11:38
+ * @LastEditTime: 2021-04-26 11:15:13
  * @Description: 
  */
 module.exports = {
@@ -37,7 +37,8 @@ module.exports = {
       ],
       '/lowcode/': [
         '',
-        'api_list'
+        'api_list',
+        'practice'
       ],
     }
   }
