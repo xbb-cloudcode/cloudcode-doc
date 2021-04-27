@@ -276,6 +276,7 @@ Object paramssss
 | 属性    | 类型            | 默认值 | 必填 | 说明               |
 | ------- | --------------- | ------ | ---- | ------------------  |
 | appId   | Number          | 无     | 是   | 表单对应的应用ID        |
+| menuId   | Number          | 无     | 是   | 表单对应的菜单ID        |
 | saasMark     | Number     | 无     | 是   | 表单对应的saasMark     |
 | businessType | Number     | 无     | 否   | 表单对应的businessType |
 | subBusinessType | Number  | 无     | 否   | 表单对应的subBusinessType       |
