@@ -263,3 +263,66 @@ res = {
   success: true   // Boolean
 }
 ```
+
+
+## getFormDataList(params)
+
+> 显示消息提示
+
+**参数**
+
+Object paramssss
+
+| 属性    | 类型            | 默认值 | 必填 | 说明               |
+| ------- | --------------- | ------ | ---- | ------------------  |
+| appId   | Number          | 无     | 是   | 表单对应的应用ID        |
+| saasMark     | Number     | 无     | 是   | 表单对应的saasMark     |
+| businessType | Number     | 无     | 否   | 表单对应的businessType |
+| subBusinessType | Number  | 无     | 否   | 表单对应的subBusinessType       |
+| formId | Number           | 无     | 是   |        表单对应的ID    |
+| conditions | Array        | 无     | 否   | 显示时长，单位为毫秒，最大值为3000 |
+| page | Number             | 无     | 是   |             页码               |
+| pageSize | Number         | 无     | 是   |             每页数量            |
+
+
+**返回值**
+
+**Promise**
+
+示例代码
+
+```js
+// 该函数可通过代码生成器自动生成
+async function getFormData(page = 1) {
+  return await sdk.getFormDataList({
+    appId: 2034, 
+    saasMark: 2, 
+    businessType: 0, 
+    subBusinessType: 0, 
+    formId: 14342, 
+    conditions: [], 
+    page: page, 
+    pageSize: 20
+  })
+}
+// 返回数据格式：
+{
+  success: true,   // Boolean
+  error: null,
+  data: {
+    allowEditAfterFinished: 1,
+    businessType: 2401,
+    paasFormDataESList: [], // 表单数据
+    pageHelper: {
+      currentPageNum: 1, // 当前页码
+      hasLeft: false,
+      hasRight: true,
+      leftPageNums: [],
+      pageSize: 20, // 每页的数据数量
+      pageTotal: 228, // 总页数
+      rightPageNums: [2, 3, 4, 5],
+      rowsCount: 4548 // 数据总量
+    }
+  }
+}
+```
