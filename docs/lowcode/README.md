@@ -197,7 +197,7 @@ API 服务是一个异步任务，不会阻塞代码的运行，不参与到逻�
 
 JS 面板用于提供给页面 JS 调用。在页面 JS 中，已经享有基本的 JS 语法提示、销帮帮 SDK 语法提示以及当前表单字段唯一ID提示，主题、字体大小配置等功能。
 
-![image-20210412193531196](https://cdn.hansuku.com/fast-uploader/image-20210412193531196.png)
+![image-20210412193531196](/cloudcode-doc/images/editor_suggestion.png)
 
 在引号内(单引号和双引号)使用ctrl + sapce(空格键)调起代码提示可看到字段对应的唯一id。
 ![字段唯一ID提示](/cloudcode-doc/images/field_tips.png)
