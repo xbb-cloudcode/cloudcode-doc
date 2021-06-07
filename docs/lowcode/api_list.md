@@ -10,6 +10,11 @@
 
 fieldId 字段唯一id
 
+- 当fieldId为`*`时，获取整个表单的所有字段值
+- 当fieldId为`子表单id`时，获取子表单所有数据
+- 当fieldId为`子表单id.列id`时，获取子表单指定列的所有数据列表
+- 当fieldId为`子表单id.0.列id`时，获取子表单第1条数据的指定列的数据
+
 **返回值**
 
 **Promise value  字段值**
@@ -325,5 +330,32 @@ async function getFormData(page = 1) {
       rowsCount: 4548 // 数据总量
     }
   }
+}
+```
+
+
+## getDataId()
+
+> 获取当前正在编辑的数据id
+
+**参数**
+
+无
+
+**返回值**
+
+**Promise**
+
+示例代码
+
+```js
+// 该函数可通过代码生成器自动生成
+export async function test () {
+  const res = sdk.getDataId()
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  value: 'dataId'  // 字段的值 String/Number/Object
 }
 ```
