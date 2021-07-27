@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # 使用SDK
 
 ## 安装SDK
@@ -37,6 +41,8 @@ npm i xbb-sdk -S
 | action | data | 说明 |
 | ------ | ---- | --- |
 | openDetailPage | {appId, dataId, saasMark, businessType, subBusinessType} | 调用详情页 |
+| addNewForm | {appId, formId, saasMark, menuId, businessType, subBusinessType, cloudcodeData} | 调用新建表单页 |
+| showMessage | {type, content, time} | 调用message组件 |
 
 
 #### 返回值
