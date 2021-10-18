@@ -38,7 +38,8 @@ module.exports = {
       '/lowcode/': [
         '',
         'api_list',
-        'practice'
+        'practice',
+        'field_list'
       ],
     }
   }
