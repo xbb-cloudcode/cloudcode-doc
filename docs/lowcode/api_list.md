@@ -359,3 +359,79 @@ res = {
   value: 'dataId'  // 字段的值 String/Number/Object
 }
 ```
+
+## getUserInfo()
+> 获取当前销帮帮的用户信息
+
+**参数**
+
+无
+
+**返回值**
+
+```json
+{
+  "userId": "1060661526-1904315290", // 用户 ID
+  "corpid": "ding012d1a0065f8b378ffe93478753d9884", // 公司 ID
+  "xbbAccessToken": "*****************************", // 销帮帮用户信息身份凭证，此内容仅二方可使用
+  "roleIds": "|1|5|", // 角色ID 存在多个角色 使用|分隔
+  "env": "prod", // 当前销帮帮运行环境
+  "companyName": "云叩学院", // 公司名称
+  "userName": "Han 谭景琳", // 用户名称
+  "lang": "zh_CN" // 当前销帮帮运行使用的国际化
+}
+```
+示例代码
+```js
+const user = await sdk.getUserInfo()
+console.log(user)
+```
+
+## validateForm()
+> 支持触发表单校验
+
+> 最低使用版本：销帮帮 V4.46.0
+
+**参数**
+
+无
+
+**返回值**
+```json
+{
+  "success": true, // 注意 这个 success 标识是标识低代码是否执行成功 并不是表单校验的结果
+  "error": null,
+  "validateSuccess": false, // 表单校验的结果
+  "data": { // 此时表单的所有数据，注意只有表单校验成功此项才会有值
+    "text_1": "",
+    "text_2": "",
+    "creatorId": {
+    },
+    "addTime": ,
+    "serialNo": ""
+  }
+}
+```
+
+
+## approveProcess()
+> 支持在审批中直接触发审批流操作：同意、拒绝、暂存、回退等
+
+> 最低使用版本：销帮帮 V4.46.0
+
+**参数**
+
+String 直接传入操作
+
+**返回值**
+
+无
+
+实例代码
+```js
+export function validateAndSubmit() {
+  sdk.approveProcess('回退')
+}
+```
+approveProcess接受一个参数，直接传入审批界面界面上的按钮文字（销帮帮在接收到指令以后是通过汉字去匹配对应操作的）
+即可完成对应操作。
