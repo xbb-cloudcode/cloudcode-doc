@@ -16,6 +16,7 @@ module.exports = {
       { text: '服务端', link: '/server-side/' },
       { text: '云开发', link: '/cloud-dev/' },
       { text: '低代码', link: '/lowcode/' },
+      { text: '工具', link: '/devtool/' },
     ],
     lastUpdated: '上次更新时间',
     sidebar: {
