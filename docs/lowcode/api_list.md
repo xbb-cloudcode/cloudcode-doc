@@ -21,19 +21,7 @@ fieldId 字段唯一id
 
 基本示例
 
-```js
-export function exampleGetValue () {
-  sdk.getValue('text_1').then(res => {
-    doSomeThings(res)
-  })
-}
-// res 数据格式：
-res = {
-  success: true,   // Boolean
-  value: 'value',  // 字段的值 String/Number/Object
-  error: null      // 方法调用报错信息，未报错时为 null
-}
-```
+<<< codes/lowcode/getValue.js
 
 ## setValue(fieldId, value)
 
@@ -51,19 +39,7 @@ value 字段值
 
 基本示例
 
-```js
-export function exampleSetValue () {
-  sdk.setValue('text_1', 'value').then(res => {
-    doSomeThings(res)
-  })
-}
-// res 数据格式：
-res = {
-  success: true,   // Boolean
-  error: null      // 方法调用报错信息，未报错时为 null
-}
-```
-
+<<< codes/lowcode/setValue.js
 
 
 ## setSubformValue(params)
@@ -87,23 +63,7 @@ Object params
 
 基本示例
 
-```js
-export function exampleSetSubformValue () {
-  sdk.setSubformValue({
-    formId: 'subForm_1',
-    row: 0,
-    fieldId: 'num_1',
-    value: 0.0337999
-  }).then(res => {
-    doSomeThings(res)
-  })
-}
-// res 数据格式：
-res = {
-  success: true,   // Boolean
-  error: null      // 方法调用报错信息，未报错时为 null
-}
-```
+<<< codes/lowcode/setSubformValue.js
 
 
 
