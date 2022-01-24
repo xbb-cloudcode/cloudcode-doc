@@ -3,7 +3,7 @@
  * @Date: 2020-11-18 10:12:51
  * @LastEditors: jinhui.li
  * @LastEditTime: 2021-04-26 11:15:13
- * @Description: 
+ * @Description:
  */
 module.exports = {
   base: '/cloudcode-doc/',
@@ -13,34 +13,33 @@ module.exports = {
     logo: '/logo.png',
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: '服务端', link: '/server-side/' },
-      { text: '云开发', link: '/cloud-dev/' },
+      { text: '插件开发', link: '/plugin/' },
       { text: '低代码', link: '/lowcode/' },
+      { text: '云开发', link: '/cloud-dev/' },
       { text: '工具', link: '/devtool/' },
     ],
     lastUpdated: '上次更新时间',
     sidebar: {
       '/guide/': [
         '',
-        'quick_start',
-        'host_environment',
-        'use_sdk',
-        'use_platform'
+        'plugin_introduce',
+        'lowcode_introduce'
       ],
-      '/server-side/': [
-        ''
+      '/plugin/': [
+        '',
+        'api_list',
+        'FAQ'
       ],
       '/cloud-dev/': [
         '',
-        'first_function',
-        'func_environment',
-        'use_sdk'
+        'basis'
       ],
       '/lowcode/': [
         '',
+        'quick_start',
+        'guide',
         'api_list',
-        'practice',
-        'field_list'
+        'FAQ'
       ],
     }
   }
