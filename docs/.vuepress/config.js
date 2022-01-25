@@ -27,18 +27,21 @@ module.exports = {
       ],
       '/plugin/': [
         '',
+        'guide',
+        'use_sdk',
         'api_list',
         'FAQ'
       ],
       '/cloud-dev/': [
         '',
-        'basis'
+        'func_environment',
+        'first_function'
       ],
       '/lowcode/': [
         '',
         'quick_start',
-        'guide',
         'api_list',
+        'field_list',
         'FAQ'
       ],
     }

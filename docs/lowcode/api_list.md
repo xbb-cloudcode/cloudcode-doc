@@ -533,39 +533,3 @@ export async function example() {
 }
 ```
 
-## 跨表单调用工单数据
-### sdk.getWorkOrderList(object)  <Badge text="ALL" type="warning"/> <Badge text="v4.47.0"/>
-
-#### 参数
-`[Object object]`
-
-| 属性              | 类型     | 默认值 | 必填  | 说明                   |
-|-----------------|--------|-----|-----|----------------------|
-| appId           | Number | 无   | 是   | 表单对应的应用ID            |
-| menuId          | Number | 无   | 是   | 表单对应的菜单ID            |
-| saasMark        | Number | 无   | 是   | 表单对应的saasMark        |
-| businessType    | Number | 无   | 否   | 表单对应的businessType    |
-| subBusinessType | Number | 无   | 否   | 表单对应的subBusinessType |
-| formId          | Number | 无   | 是   | 表单对应的ID              |
-| dataId          | Number | 无   | 是   | 对应的数据ID              |
-
-#### 返回值
-
-`Promise<data>`工单数据
-
-#### 示例
-```javascript
-export async function example() {
-  const res = await sdk.getWorkOrderList({
-      appId: '',
-      menuId: '',
-      saasMark: '',
-      businessType: '',
-      subBusinessType: '',
-      formId: '',
-      dataId: ''
-  })
-  console.log(res)
-}
-```
-

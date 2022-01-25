@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../cloud-code-sdk/.idea/cloud-code-sdk.iml" filepath="$PROJECT_DIR$/../cloud-code-sdk/.idea/cloud-code-sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cloudcode-doc.iml" filepath="$PROJECT_DIR$/.idea/cloudcode-doc.iml" />
     </modules>
   </component>

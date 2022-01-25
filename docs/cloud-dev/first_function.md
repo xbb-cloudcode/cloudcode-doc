@@ -1,16 +1,19 @@
+---
+sidebarDepth: 2
+---
 # 第一个云函数
 
-1. 在cloudfunctions目录下新建一个云函数目录，名为add
-2. 在add目录下使用`npm init `初始化npm
-3. 在add目录下新建一个js文件，名为`index.js`
-4. 在`index.js`文件中编写如下内容
+1. 在cloudfunctions目录下新建一个云函数目录，名为`add`
+3. 在`add`目录下使用`npm init -y `初始化npm
+4. 在`add`目录下新建一个js文件，名为`index.js`
+5. 在`index.js`文件中编写如下内容
 ```javascript
 'use strict';
 
 exports.handler = (event, context, callback) => {
-    event = JSON.parse(event.toString()); // event用于接收事件参数，类型是个Buffer
-    const {a, b} = event.args; // event.args 用于接收传给云函数的参数，是个对象
-    callback(null, a + b); // 通过callback将结果返回，第一个参数是Error，第二个参数是返回的结果
+  event = JSON.parse(event.toString()); // event用于接收事件参数，类型是个Buffer
+  const {a, b} = event;
+  callback(null, a + b); // 通过callback将结果返回，第一个参数是Error，第二个参数是返回的结果
 }
 ```
 
@@ -42,13 +45,16 @@ callback是由系统定义的函数，作为入口函数的入参用于返回调
     * 如果data是其他类型将被转换成字符串返回。
 
 ## 使用云函数
-#### 使用Docker在本地调试云函数
-在本地为了方便开发者调试，我们使用Docker模拟了线上的serverless环境，其中包含云函数、云数据库和云存储的运行环境。
-```shell
-docker pull registry.cn-hangzhou.aliyuncs.com/musii/cc-serverless-sandbox:latest # 拉取镜像
-docker run -itd -p 3000:3000 -v 云函数代码绝对路径:/var/fc/runtime/nodejs12/code registry.cn-hangzhou.aliyuncs.com/musii/cc-serverless-sandbox:latest # 运行docker
-```
-在前端项目中指定`window.FC_ENV = 'dev'`即可使用本地的环境
+#### 使用开发者工具在本地调试云函数
+使用[开发者工具](/devtool/)可以轻松对本地云函数进行调试。
+![img.png](./img.png)
+![img_1.png](./img_1.png)
+![img_2.png](./img_2.png)
+![img_3.png](./img_3.png)
+这就能看到函数的执行结果了。你还可以使用查看日志功能查看函数执行的日志。如图所示
+![img_4.png](./img_4.png)
 #### 部署到云函数
 当本地调试完成后就可以部署到云函数上使用了，首先将云函数压缩(需要包含`node_modules`目录)成zip压缩包，在云叩平台上传即可。
 ![deploy_function](/cloudcode-doc/images/deploy_function.png)
+
+部署完成之后就可在[云叩插件](/plugin/api_list.html#%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0)和[低代码](/lowcode/api_list.html#%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0)中调用了。
