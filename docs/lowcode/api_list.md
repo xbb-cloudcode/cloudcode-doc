@@ -533,3 +533,85 @@ export async function example() {
 }
 ```
 
+## 刷新页面
+### sdk.refreshPage()  <Badge text="ALL" type="warning"/> <Badge text="v4.49.0"/>
+
+**参数**
+
+无
+
+#### 返回值
+
+无
+
+#### 示例
+```javascript
+export async function refreshPage() {
+  await sdk.refreshPage()
+}
+```
+
+## 刷新列表页
+> 用于在列表页、详情页通过 API 等方式修改完数据以后想要实时回显到列表上的操作，仅 PC 端可用
+### sdk.refreshList()  <Badge text="ALL" type="warning"/> <Badge text="v4.49.0"/>
+
+**参数**
+
+无
+
+#### 返回值
+
+无
+
+#### 示例
+```javascript
+export async function refreshList() {
+  await sdk.refreshList()
+}
+```
+
+## 刷新详情页
+> 用于在详情页通过 API 等方式修改完数据以后想要实时回显到详情页上的操作，仅 PC 端可用
+### sdk.refreshDetail()  <Badge text="ALL" type="warning"/> <Badge text="v4.49.0"/>
+
+**参数**
+
+无
+
+#### 返回值
+
+无
+
+#### 示例
+```javascript
+export async function refreshDetail() {
+  await sdk.refreshDetail()
+}
+```
+
+## 获取当前环境变量
+### sdk.getEnv()  <Badge text="ALL" type="warning"/> <Badge text="v4.49.0"/>
+
+**参数**
+
+无
+
+#### 返回值
+`Promise<result>` 环境变量信息
+
+```json5
+{
+  "success": true,
+  "error": null,
+  "device": "pc", // 当前销帮帮运行设备，pc 为电脑端，mobile 为手机端
+  "platform": "dingtalk" // 当前销帮帮运行平台，dingtalk 为钉钉版，h5 为独立版，wx 为企业微信版，lark 为飞书版
+}
+```
+
+#### 示例
+```javascript
+export async function getEnv() {
+  const envInfo = await sdk.getEnv()
+  console.log(envInfo)
+}
+```
