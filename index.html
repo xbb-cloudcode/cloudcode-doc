@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/xbb-sdk/index.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    xbb.ready(() => {
+      xbb.getUserInfo().then(data => {
+        console.log(data)
+        // data返回的数据如下
+        // companyName: "云叩学院"
+        // corpid: "ding012d1a0065f8b378ffe93478753d9884"
+        // env: "prod"
+        // lang: "zh_CN"
+        // roleIds: "|1|5|"
+        // userId: "1060661526-1904315290"
+        // userName: "Han 谭景琳"
+
+        // 进行合法性鉴权
+        xbb.cloud.auth().then(res => {
+          console.log(res)
+          // 返回为 true 的情况下 代表此用户已经通过销帮帮的鉴权，且用户信息有效。
+        })
+      })
+    })
+  </script>
+</body>
+</html>

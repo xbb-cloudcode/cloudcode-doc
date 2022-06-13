@@ -177,6 +177,7 @@ res = {
 | 名称     | 类型     | 描述      |
 |--------|--------|---------|
 | formId | string | 子表单唯一id |
+| index | number | 要删除的行号 |
 
 **返回值**
 
@@ -186,7 +187,10 @@ res = {
 
 ```js
 export async function exampleAddSubformRow () {
-  const res = await sdk.addSubformRow('subForm_1');
+  const res = await sdk.deleteSubFormRow({
+    formId: 'subForm_1', // 子表单唯一id
+    index: 0 // 要删除的行号
+  });
   console.log(res)
 }
 // res 数据格式：
@@ -474,6 +478,9 @@ type为枚举值
 | detail  | 详情页(移动端不支持) |
 | design  | 表单设计页(移动端不支持) |
 | new  | 新建页 |
+| copy | 复制表单 |
+| linkAdd | 新建弹窗类型的关联表单 |
+| linkEdit | 修改弹窗类型的关联表单 |
 
 示例代码
 ```javascript

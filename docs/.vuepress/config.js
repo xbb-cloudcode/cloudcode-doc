@@ -30,7 +30,8 @@ module.exports = {
         'guide',
         'use_sdk',
         'api_list',
-        'FAQ'
+        'FAQ',
+        'auth'
       ],
       '/cloud-dev/': [
         '',
