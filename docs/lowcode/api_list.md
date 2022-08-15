@@ -381,7 +381,7 @@ export async function examplConfirm() {
     title: 'confirm标题',
     content: 'confirm内容',
     confirmButtonText: '确认',
-    cancelButtonText: '取消'，
+    cancelButtonText: '取消',
     type: 'warning'
   });
   console.log(res)
