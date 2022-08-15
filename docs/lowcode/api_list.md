@@ -67,6 +67,35 @@ res = {
 ```
 
 
+## 获取表单字段配置信息
+### sdk.getFieldInfo(fieldId) <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+
+**参数**
+
+| 名称      | 类型     | 描述     |
+|---------|--------|--------|
+| fieldId | string | 表单字段id |
+
+**返回值**
+
+`Promise`
+
+基本示例
+
+```js
+export async function exampleGetFieldInfo () {
+  const res = await sdk.getFieldInfo('text_1');
+  console.log(res)
+}
+// res 数据格式：
+res = {
+  success: true,   // Boolean
+  error: null,
+  fieldInfo: {...fieldInfo}     // 表单字段配置信息Object
+}
+```
+
+
 ## 设置子表单字段值
 ### sdk.setSubformValue(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
 
@@ -290,6 +319,117 @@ res = {
 }
 ```
 
+## 显示alert弹窗
+### sdk.alert(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+
+**参数**
+
+`[Object info]`
+
+| 属性      | 类型     | 默认值 | 必填  | 说明                               |
+|---------|--------|-----|-----|----------------------------------|
+| content    | String | 无   | 否   | alert的内容 |
+| title      | String | 无   | 否   | alert的标题                             |
+| confirmButtonText       | String | 确认   | 否   | 确认按钮的文字              |
+
+**返回值**
+
+`Promise`
+
+示例代码
+
+```js
+export async function examplAlert() {
+  const res = sdk.alert({
+    title: 'alert标题',
+    content: 'alert内容',
+    confirmButtonText: '确认'
+  });
+  console.log(res)
+}
+// res 数据格式：
+res = {
+  confirm: true 或 false,// true说明用户点击了确认按钮 false则点击了关闭按钮
+  success: true   // Boolean
+}
+```
+
+## 显示confirm弹窗
+### sdk.confirm(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+
+**参数**
+
+`[Object info]`
+
+| 属性      | 类型     | 默认值 | 必填  | 说明                               | 可选值 |
+|---------|--------|-----|-----|----------------------------------|---------------------------|
+| content    | String | 无   | 否   | confirm的内容 | — |
+| title      | String | 无   | 否   | confirm的标题                             | — |
+| confirmButtonText       | String | 确认   | 否   | 确认按钮的文字              | — |
+| cancelButtonText        | String | 取消   | 否   | 取消按钮的文字              | — |
+| type       | String |  warning  | 否   | 消息类型，用于显示图标              | success / info / warning / error |
+
+**返回值**
+
+`Promise`
+
+示例代码
+
+```js
+export async function examplConfirm() {
+  const res = await sdk.confirm({
+    title: 'confirm标题',
+    content: 'confirm内容',
+    confirmButtonText: '确认',
+    cancelButtonText: '取消'，
+    type: 'warning'
+  });
+  console.log(res)
+}
+// res 数据格式：
+res = {
+  confirm: true 或 false,// true说明用户点击了确认按钮 false则点击了关闭按钮
+  success: true   // Boolean
+}
+```
+
+## 显示prompt弹窗
+### sdk.prompt(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+
+**参数**
+
+`[Object info]`
+
+| 属性      | 类型     | 默认值 | 必填  | 说明                               | 可选值 |
+|---------|--------|-----|-----|----------------------------------|---------------------------|
+| content    | String | 无   | 否   | confirm的内容 | — |
+| title      | String | 无   | 否   | confirm的标题                             | — |
+| confirmButtonText       | String | 确认   | 否   | 确认按钮的文字              | — |
+| cancelButtonText        | String | 取消   | 否   | 取消按钮的文字              | — |
+
+**返回值**
+
+`Promise`
+
+示例代码
+
+```js
+export async function examplPrompt() {
+  const res = await sdk.prompt({
+    title: 'prompt标题',
+    content: 'prompt内容',
+    confirmButtonText: '确认',
+    cancelButtonText: '取消',
+  });
+  console.log(res)
+}
+// res 数据格式：
+res = {
+  value: 'value', // 用户输入的值 String类型
+  confirm: true 或 false, // true说明用户点击了确认按钮 false则点击了关闭按钮
+  success: true   // Boolean
+}
+```
 ## 跨表调用数据
 ### sdk.getFormDataList(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
 
