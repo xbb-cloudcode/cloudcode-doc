@@ -5,7 +5,7 @@ sidebarDepth: 2
 # API列表
 
 ## 获取表单字段值
-### sdk.getValue(fieldId) <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getValue(fieldId) <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -39,7 +39,7 @@ res = {
 ```
 
 ## 设置表单字段值
-### sdk.setValue(fieldId, value)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.setValue(fieldId, value)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -68,7 +68,7 @@ res = {
 
 
 ## 获取表单字段配置信息
-### sdk.getFieldInfo(fieldId) <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getFieldInfo(fieldId) <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -97,7 +97,7 @@ res = {
 
 
 ## 设置子表单字段值
-### sdk.setSubformValue(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.setSubformValue(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -135,7 +135,7 @@ res = {
 
 
 ## 获取子表单字段值
-### sdk.getSubformValue(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getSubformValue(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -172,7 +172,7 @@ res = {
 
 
 ## 新建一条子表单空数据
-### sdk.addSubformRow(formId)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.addSubformRow(formId)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -199,7 +199,7 @@ res = {
 ```
 
 ## 删除一条子表单
-### sdk.deleteSubFormRow()  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.deleteSubFormRow()  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -231,7 +231,7 @@ res = {
 
 
 ## 设置字段为不可编辑
-### sdk.disableField(fieldId)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.disableField(fieldId)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -259,7 +259,7 @@ res = {
 
 
 ## 设置字段为可编辑
-### sdk.enableField(fieldId)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.enableField(fieldId)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -286,7 +286,7 @@ res = {
 ```
 
 ## 显示消息提示
-### sdk.showToast(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.showToast(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -320,7 +320,7 @@ res = {
 ```
 
 ## 显示alert弹窗
-### sdk.alert(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.alert(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -355,7 +355,7 @@ res = {
 ```
 
 ## 显示confirm弹窗
-### sdk.confirm(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.confirm(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -394,7 +394,7 @@ res = {
 ```
 
 ## 显示prompt弹窗
-### sdk.prompt(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.prompt(info)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -402,8 +402,8 @@ res = {
 
 | 属性      | 类型     | 默认值 | 必填  | 说明                               | 可选值 |
 |---------|--------|-----|-----|----------------------------------|---------------------------|
-| content    | String | 无   | 否   | confirm的内容 | — |
-| title      | String | 无   | 否   | confirm的标题                             | — |
+| content    | String | 无   | 否   | prompt的内容 | — |
+| title      | String | 无   | 否   | prompt的标题                             | — |
 | confirmButtonText       | String | 确认   | 否   | 确认按钮的文字              | — |
 | cancelButtonText        | String | 取消   | 否   | 取消按钮的文字              | — |
 
@@ -431,7 +431,7 @@ res = {
 }
 ```
 ## 跨表调用数据
-### sdk.getFormDataList(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getFormDataList(params)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -493,7 +493,7 @@ async function getFormData(page = 1) {
 ```
 
 ## 获取当前正在编辑的数据id
-### sdk.getDataId()  <Badge text="PC" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getDataId()  <Badge text="PC" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -518,7 +518,7 @@ res = {
 ```
 
 ## 获取当前销帮帮的用户信息
-### sdk.getUserInfo()  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.getUserInfo()  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 **参数**
 
@@ -632,7 +632,7 @@ export async function getType() {
 
 
 ## 调用云函数
-### sdk.cloud.callFunction(object)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.cloud.callFunction(object)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 #### 参数
 `[Object object]`
@@ -658,7 +658,7 @@ export async function example() {
 ```
 
 ## 上传文件到云存储
-### sdk.cloud.uploadFile(object)  <Badge text="ALL" type="warning"/> <Badge text="v4.45.0"/>
+### sdk.cloud.uploadFile(object)  <Badge text="ALL" type="warning"/> <Badge text="v4.57.0"/>
 
 #### 参数
 `[Object object]`
