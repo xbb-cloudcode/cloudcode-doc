@@ -43,8 +43,24 @@ module.exports = {
         'quick_start',
         'api_list',
         'field_list',
+        'training_materials',
         'FAQ'
       ],
     }
-  }
+  },
+  plugins: {
+    smplayer: {
+      artplayer: {
+        src: {
+          fullscreen: true,
+          autoSize: true,
+          setting: true,
+          playbackRate: true,
+          whitelist: ["*"],
+        },
+        width: "100%",
+        height: [9 / 16, 0],
+      },
+    },
+  },
 }

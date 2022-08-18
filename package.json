@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^1.7.1"
+  },
+  "dependencies": {
+    "vuepress-plugin-smplayer": "^1.5.3"
   }
 }
