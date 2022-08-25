@@ -48,19 +48,45 @@ module.exports = {
       ],
     }
   },
-  plugins: {
-    smplayer: {
-      artplayer: {
-        src: {
-          fullscreen: true,
-          autoSize: true,
-          setting: true,
-          playbackRate: true,
-          whitelist: ["*"],
+  plugins: [
+    [
+      "smplayer",
+      {
+        artplayer: {
+          src: {
+            fullscreen: true,
+            autoSize: true,
+            setting: true,
+            playbackRate: true,
+            whitelist: ["*"],
+          },
+          width: "100%",
+          height: [9 / 16, 0],
         },
-        width: "100%",
-        height: [9 / 16, 0],
       },
-    },
-  },
+    ],
+    [
+      'fulltext-search'
+    ],
+  ],
+  // plugins: {
+  //   smplayer: {
+  //     artplayer: {
+  //       src: {
+  //         fullscreen: true,
+  //         autoSize: true,
+  //         setting: true,
+  //         playbackRate: true,
+  //         whitelist: ["*"],
+  //       },
+  //       width: "100%",
+  //       height: [9 / 16, 0],
+  //     },
+  //   },
+  //   // 'fulltext-search':{
+  //   //     tokenize: 'full',
+  //   //     split: /\s+/,
+  //   //     encode: 'icase',
+  //   //   },
+  // },
 }

@@ -40,7 +40,7 @@ xbb.ready(() => {
 - 飞书平台通过 `corpid` 和 `userid`查询[用户列表接口](https://appfapi.xbongbong.com/#/apitest?anchor=%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)，获取用户在销帮帮内绑定的手机号。
 - 独立版通过 `corpid` 和 `userid`查询[用户列表接口](https://appfapi.xbongbong.com/#/apitest?anchor=%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)，获取用户在销帮帮内绑定的手机号。
 
-#### 如何绑定手机号以及通过 API 查询
+### 如何绑定手机号以及通过 API 查询
 绑定手机号可在销帮帮登录后右上角用户名称-点击-账号设置-绑定完成手机号绑定。
 ![img_8.png](./img_8.png)
 绑定完成后，通过`https://appapi.xbongbong.com/pro/v2/api/user/list`接口获取：
