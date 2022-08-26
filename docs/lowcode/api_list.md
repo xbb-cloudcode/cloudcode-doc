@@ -247,7 +247,7 @@ res = {
 
 ```js
 export async function exampleDisableField () {
-  const res = sdk.disableField('text_1');
+  const res = await sdk.disableField('text_1');
   console.log(res)
 }
 // res 数据格式：
@@ -306,7 +306,7 @@ res = {
 
 ```js
 export async function examplShowToast() {
-  const res = sdk.showToast({
+  const res = await sdk.showToast({
     type: 'success',
     content: '这是内容',
     time: 3000
@@ -340,7 +340,7 @@ res = {
 
 ```js
 export async function examplAlert() {
-  const res = sdk.alert({
+  const res = await sdk.alert({
     title: 'alert标题',
     content: 'alert内容',
     confirmButtonText: '确认'
@@ -507,7 +507,7 @@ async function getFormData(page = 1) {
 
 ```js
 export async function test () {
-  const res = sdk.getDataId()
+  const res = await sdk.getDataId()
   console.log(res)
 }
 // res 数据格式：

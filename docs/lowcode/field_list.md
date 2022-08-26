@@ -12,31 +12,31 @@
 单行文本的字段标识（attr）通常为 `text_*`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: 'HelloWorld' }
 // 赋值
-const data = sdk.setValue('text_1', 'HelloCloudCode')
+const data = await sdk.setValue('text_1', 'HelloCloudCode')
 ```
 ### 多行文本
 多行文本和单行文本行为完全一致
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: 'HelloWorld' }
 // 赋值
-const data = sdk.setValue('text_1', 'HelloCloudCode')
+const data = await sdk.setValue('text_1', 'HelloCloudCode')
 ```
 ### 数字
 数字字段的标识（attr）通常为 `num_*`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('num_1')
+const data = await sdk.getValue('num_1')
 console.log(data)
 // { value: 1 }
 // 赋值
-const data = sdk.setValue('num_1', 2)
+const data = await sdk.setValue('num_1', 2)
 ```
 ### 日期
 日期字段需要注意，销帮帮的日期字段存储的是时间戳并且舍去了毫秒位,
@@ -44,7 +44,7 @@ const data = sdk.setValue('num_1', 2)
 日期字段的标识（attr）通常为`date_*`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('date_1')
+const data = await sdk.getValue('date_1')
 console.log(data)
 // { value: 1633017600 }
 // 赋值
@@ -55,7 +55,7 @@ sdk.setValue('date_1', now / 1000)
 单选按钮的值通常是一个对象，结构固定为`{text:'', value: ''}`，字段标识为`text_*`。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: { text: '选项值1', value: '0727a962-f7f1-0030-77b9-984577cdd552' } }
 // 赋值
@@ -67,7 +67,7 @@ sdk.setValue('text_1', { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5
 ### 复选框组
 复选框组的字段标识是`array_*`，他的值是一个数组，里面每一个元素都由`{text:'', value: ''}`组成
 ```JavaScript
-const data = sdk.getValue('array_1')
+const data = await sdk.getValue('array_1')
 console.log(data)
 // { value: [{ text: '选项值1', value: '0727a962-f7f1-0030-77b9-984577cdd552' }, { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5be559e133' }] }
 // 赋值
@@ -78,7 +78,7 @@ sdk.setValue('array_1', [{ text: '选项值1', value: '0727a962-f7f1-0030-77b9-9
 > 当选项为常规的自定义选项时
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: { text: '选项值1', value: '0727a962-f7f1-0030-77b9-984577cdd552' } }
 // 赋值
@@ -89,7 +89,7 @@ sdk.setValue('text_1', { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5
 假设当前是 A 表单下的下拉框 a，我选项联动了 B 表单下的下拉框 b，则需要通过上面我们字段唯一解释查询去查询 B 表单的 b 字段的下拉选项。赋值和获取值行为和正常下拉框一致：
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: { text: '选项值1', value: '0727a962-f7f1-0030-77b9-984577cdd552' } }
 // 赋值
@@ -100,7 +100,7 @@ sdk.setValue('text_1', { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5
 数据联动选项的`text`和`value`始终保持一致，假设我们下拉框数据联动的是客户表，联动显示客户名称，则
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: { text: '张三', value: '张三' } }
 // 赋值
@@ -112,7 +112,7 @@ sdk.setValue('text_1', { text: '李四', value: '李四' })
 > 当选项为常规的自定义时
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: [{"text":"选项值1","value":"4df36041-646e-7ee7-130a-b03ce23d5b3d"},{"text":"选项值2","value":"44741ae0-b1aa-e8d1-f2ed-7e1bc743ec92"}] }
 // 赋值
@@ -123,7 +123,7 @@ sdk.setValue('text_1', [{"text":"选项值1","value":"4df36041-646e-7ee7-130a-b0
 假设当前是 A 表单下的下拉框复选框 a，我选项联动了 B 表单下的下拉框 b，则需要通过上面我们字段唯一解释查询去查询 B 表单的 b 字段的下拉选项。赋值和获取值行为和正常下拉复选框一致：
 ```JavaScript
 // 获取值
-const data = sdk.getValue('array_1')
+const data = await sdk.getValue('array_1')
 console.log(data)
 // { value: [{"text":"选项值1","value":"4df36041-646e-7ee7-130a-b03ce23d5b3d"}] }
 // 赋值
@@ -134,7 +134,7 @@ sdk.setValue('text_1', [{"text":"选项值2","value":"44741ae0-b1aa-e8d1-f2ed-7e
 数据联动选项的`text`和`value`始终保持一致，假设我们下拉复选框数据联动的是客户表，联动显示客户名称，则
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_1')
+const data = await sdk.getValue('text_1')
 console.log(data)
 // { value: [{ text: '张三', value: '张三' }] }
 // 赋值
@@ -144,7 +144,7 @@ sdk.setValue('text_1', [{ text: '张三', value: '张三' }, { text: '李四', v
 地址字段由省市区、详细地址、经纬度组成，字段标识是`address_*`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('address_1')
+const data = await sdk.getValue('address_1')
 console.log(data)
 // { value: {"city":"杭州市","address":"祥符街道通益路861号","district":"拱墅区","province":"浙江省","location":{"lon":120.13072,"lat":30.33306}} }
 // 赋值
@@ -154,7 +154,7 @@ sdk.setValue('address_1', {"city":"杭州市","address":"银丰大厦1702","dist
 定位字段组成结构和地址一致，字段标识是`geo_*`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('geo_1')
+const data = await sdk.getValue('geo_1')
 console.log(data)
 // { value: {"city":"杭州市","address":"祥符街道通益路861号","district":"拱墅区","province":"浙江省","location":{"lon":120.13072,"lat":30.33306}} }
 // 赋值
@@ -166,7 +166,7 @@ sdk.setValue('geo_1', {"city":"杭州市","address":"银丰大厦1702","district
 > 注意，由于浏览器限制必须要是 https 链接，并且做好Access-Control-Allow-Origin（跨域）的配置
 ```JavaScript
 // 获取值
-const data = sdk.getValue('file_1')
+const data = await sdk.getValue('file_1')
 console.log(data)
 // { value: ["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/1060661526-1904315290/jpg/16342813779849b65d7a37fa3ef4c80e42795947b51fa.jpg?1634281377984"] }
 // 赋值
@@ -185,7 +185,7 @@ sdk.setValue('file_1', ["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b3
 ```
 附件的地址规则跟图片一致，允许外部来源，同样需要 https 和跨域配置。
 ```JavaScript
-const data = sdk.getValue('file_1')
+const data = await sdk.getValue('file_1')
 console.log(data)
 // { value: [{
 //  "filename":"12055.jpg", // 文件名称
@@ -229,7 +229,7 @@ sdk.setValue('file_1', [{
 
 ```JavaScript
 // 获取值
-const data = sdk.getValue('file_1')
+const data = await sdk.getValue('file_1')
 console.log(data)
 // {value: [{"addTime":1614390504,"appId":267450,"businessType":0,"color":"#FF813D","corpid":"ding012d1a0065f8b378ffe93478753d9884","creatorId":"1060661526-1904315290","del":0,"enable":0,"formId":2675232,"groupId":8138,"id":8687,"name":"默认标签","sort":0,"updateTime":1614390504}] }
 // 赋值
@@ -243,7 +243,7 @@ sdk.setValue('file_1', [{"addTime":1614390504,"appId":267450,"businessType":0,"c
 拿到的结构示例：
 ```JavaScript
 // 获取值
-const data = sdk.getValue('subForm_1');
+const data = await sdk.getValue('subForm_1');
 console.log(data)
 // { value: [{"text_1":"Han","num_1":22,"subId":"bb1802c2-0570-b977-a536-675fe06b2e94","editFlag":true},{"text_1":"Kin","num_1":22,"subId":"5bd37d72-34e2-2787-80a0-d5334c57278a","editFlag":true}] }
 // 赋值
@@ -275,7 +275,7 @@ sdk.setValue('subForm_1', [{"text_1":"Han","num_1":22},{"text_1":"Kin","num_1":2
 > 注意上面我们对 text_1这个字段标明了必填，但这个东西不是固定的，而是根据关联数据主键来的，我关联的是客户表下面的客户名称，客户名称的字段标识是 text_1，所以这个字段必填。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_8')
+const data = await sdk.getValue('text_8')
 console.log(data)
 // { value: {"dataId":69690056,"data":{"addTime":1633771411,"appId":257213,"corpid":"ding012d1a0065f8b378ffe93478753d9884","creatorId":"1060661526-1904315290","dataId":69690056,"del":0,"formId":2572664,"menuId":2643262,"ownerId":"1060661526-1904315290","serialNo":"","updateTime":1633771707,"text_1":"测试001"}} }
 // 赋值
@@ -285,7 +285,7 @@ sdk.setValue('text_8', {"dataId":69690056,"data":{"dataId":69690056,"text_1":"�
 成员单选的字段标识是`text_*`，他的值是一个对象，里面包含`id`用户id和`name`用户名：
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_9')
+const data = await sdk.getValue('text_9')
 console.log(data)
 // { value: {"id":"011","name":"吴军昊"} }
 // 赋值
@@ -295,7 +295,7 @@ sdk.setValue('text_9', {"id":"012","name":" 谭景琳"})
 成员多选的字段标识是`array_*`，他的值是一个数组，数组里包含的每个元素和成员单选一样，`id`用户id和`name`用户名。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_9')
+const data = await sdk.getValue('text_9')
 console.log(data)
 // { value: [{"id":"011","name":"吴军昊"},{"id":"012","name":"Han 谭景琳"}] }
 // 赋值
@@ -305,7 +305,7 @@ sdk.setValue('text_9', [{"id":"011","name":"吴军昊"},{"id":"012","name":"Han 
 部门单选的字段标识是`text_*`，他的值是一个对象，包含`id`部门id和`name`部门名、`property`属性，属性固定的值是`dept`。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_9')
+const data = await sdk.getValue('text_9')
 console.log(data)
 // { value: {"id":411449877,"name":"体验校区","property":"dept"} }
 // 赋值
@@ -315,7 +315,7 @@ sdk.setValue('text_9', {"id":411449877,"name":"体验校区","property":"dept"})
 部门单选的字段标识是`array_*`，他的值是一个数组，数组里包含的每个元素和部门单选一样，`id`用户id和`name`用户名、`property: dept`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('array_1')
+const data = await sdk.getValue('array_1')
 console.log(data)
 // { value: [{"id":411682382,"name":"Han 谭景琳的体验班","property":"dept"},{"id":411586525,"name":"老师","property":"dept"},{"id":411586526,"name":"学生","property":"dept"},{"id":411586527,"name":"家长","property":"dept"}] }
 // 赋值
@@ -336,7 +336,7 @@ sdk.setValue('array_1', [{"id":411682382,"name":"Han 谭景琳的体验班","pro
 > 在回填`departmentId`请注意，正常情况下所属部门是当前用户的所属部门及其名下的子部门，不可向上选取，如果强行修改为其他节点数据可能造成数据异常。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('departmentId')
+const data = await sdk.getValue('departmentId')
 console.log(data)
 // { value: {"id":411449877,"name":"体验校区"} }
 // 赋值
@@ -347,7 +347,7 @@ sdk.setValue('departmentId', {"id":411449877,"name":"体验校区"})
 负责人字段的标识是`ownerId`，需要注意虽然负责人是单选的，但是他的数据结构是个数组。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('ownerId')
+const data = await sdk.getValue('ownerId')
 console.log(data)
 // { value: [{"id":"1060661526-1904315290","name":"Han 谭景琳"}] }
 // 赋值
@@ -357,7 +357,7 @@ sdk.setValue('ownerId', [{"id":"1060661526-1904315290","name":"Han 谭景琳"}])
 流水号字段的标识是`serialNo`，值是一个文本。正常情况下这个字段会由销帮帮生成，如非必要请不要随意修改。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('serialNo')
+const data = await sdk.getValue('serialNo')
 console.log(data)
 // { value: "2021101500001" }
 // 赋值
@@ -374,7 +374,7 @@ SaaS 字段常见于CRM、进销存、资金、经销商、工单、市场管理
 上级客户和关联数据的逻辑类似，他的值是一个数组包含对象。值得一提的是，上级客户的字段标识固定为`text_17`。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_17')
+const data = await sdk.getValue('text_17')
 console.log(data)
 // { value: [{"dataId":69690056,"appId":257213,"menuId":2643262,"formId":2572664,"addTime":1633771411,"text_1":"测试001","creatorId":"1060661526-1904315290","updateTime":1633771707,"option_0":{"value":[]},"ownerId":["1060661526-1904315290"],"serialNo":"","date_2":"一周内","customer_last_connect_time":"1","advancePaymentBalance":0,"finishAmount":undefined,"text_4":"","id":69690056,"name":"测试001"}] }
 // 赋值
@@ -430,7 +430,7 @@ sdk.setValue('text_17', [{"dataId":69690056,"text_1":"测试001","id":69690056,"
 如果自定义了选项，或者把上面其中一个选项删除再重新添加，他的 value 都会随机生成一个 uuid，这个时候需要参考下拉框获取value的方式。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('subForm_1')
+const data = await sdk.getValue('subForm_1')
 console.log(data)
 // [{"text_1":{"text":"工作","value":"1"},"text_2":"12315848166","subId":"fac185af-69c1-769d-2fe3-dc7006352e50","editFlag":true}]
 // 赋值
@@ -440,7 +440,7 @@ sdk.setValue('subForm_1', [{"text_1":{"text":"工作","value":"1"},"text_2":"123
 ### 重要程度
 重要程度这类评分字段，他的值就是 1-5 的数字。客户下的重要程度标识固定为`num_1`
 ```JavaScript
-const data = sdk.getValue('num_1')
+const data = await sdk.getValue('num_1')
 console.log(data)
 // {"value": 1}
 sdk.setValue('num_1', 5)
@@ -457,7 +457,7 @@ sdk.setValue('num_1', 5)
 联系人的生日固定为`text_14`
 ```JavaScript
 // 获取值
-const data = sdk.getValue('text_14')
+const data = await sdk.getValue('text_14')
 console.log(data)
 // {"birthdayFlag":0,"birthday":"1980-01-03"}
 // 赋值
@@ -469,7 +469,7 @@ sdk.setValue('text_14', {"birthdayFlag":1,"birthday":"1980-01-03"})
 下次跟进提醒的字段标识固定为`num_3`。他的值是0或者 1，0 代表关闭，1 代表开启。
 ```JavaScript
 // 获取值
-const data = sdk.getValue('num_3')
+const data = await sdk.getValue('num_3')
 console.log(data)
 // { "value": 0 }
 // 赋值
@@ -504,7 +504,7 @@ sdk.setValue('num_3', 1)
 ```
 关联产品标识通常为`array_*`
 ```JavaScript
-const data = sdk.getValue('array_1')
+const data = await sdk.getValue('array_1')
 console.log(data)
 // 为了节省页面空间下面的代码可以自行丢到 JSON 解析器里解析。
 // [{"text_1":{"dataId":8246466,"refProductId":undefined,"id":8246466,"data":{"addTime":1610695813,"appId":257214,"corpid":"ding012d1a0065f8b378ffe93478753d9884","creatorId":"钱卿","data":{"addTime":1610695813,"departmentId":0,"creatorId":"钱卿","text_10":"12","ownerId":["04232447501201390"],"num_40":1,"text_11":["小谭的供应商"],"text_70":["22703"],"text_3":"","text_2":"CP.20210115000005.0","text_5":"12","text_4":"","text_7":"","array_29":"云叩学院","text_9":["207196"],"text_8":"件","num_11":0,"num_12":0,"num_13":"","file_1":["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/04232447501201390/jpeg/16106957648533e03bf04c9b5b2b5ffa1e42f9a5cbd76.jpeg?1610695764848"],"text_1":"商品测试","file_2":[],"text_69":["测试仓库"],"date_20":"","updateTime":1610695813,"coUserId":["1"],"serialNo":"CP.20210115000005","array_30":"","num_5":0,"num_6":0,"num_7":0,"num_8":0,"num_1":"0.00","num_2":"0.00","num_3":8246465,"num_4":1},"dataId":8246466,"del":0,"departmentId":0,"flowStatus":0,"formId":2572652,"id":8246466,"menuId":2643261,"my_join_field":"saas_product","ownerId":["04232447501201390"],"serialNo":"CP.20210115000005","sourceData":{"addTime":1610695813,"departmentId":0,"creatorId":{"avatar":"/images/default.jpg","id":"04232447501201390","name":"钱卿"},"discount":1,"text_10":"{\"12\":\"12\"}","ownerId":"04232447501201390","num_40":1,"text_11":["小谭的供应商"],"text_70":["22703"],"text_2":"CP.20210115000005.0","text_5":1,"text_7":"","text_9":["207196"],"text_8":{"text":"件","value":"1"},"num_11":0,"enableMultiUnit":0,"num_12":0,"file_1":["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/04232447501201390/jpeg/16106957648533e03bf04c9b5b2b5ffa1e42f9a5cbd76.jpeg?1610695764848"],"text_1":"商品测试","text_69":["测试仓库"],"updateTime":1610695813,"serialNo":"CP.20210115000005","num_5":0,"num_6":0,"num_7":0,"num_8":0,"num_1":0,"num_2":0,"num_3":8246465,"num_4":1},"tagData":{},"updateTime":1610695813,"text_10":"12","num_40":1,"text_11":["小谭的供应商"],"text_70":["22703"],"text_3":"","text_2":"CP.20210115000005.0","text_5":"12","text_4":"","text_7":"","array_29":"云叩学院","text_9":["207196"],"text_8":"件","num_11":0,"num_12":0,"num_13":"","file_1":["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/04232447501201390/jpeg/16106957648533e03bf04c9b5b2b5ffa1e42f9a5cbd76.jpeg?1610695764848"],"text_1":"商品测试","file_2":[],"text_69":["测试仓库"],"date_20":"","coUserId":["1"],"array_30":"","num_5":0,"num_6":0,"num_7":0,"num_8":0,"num_1":"0.00","num_2":"0.00","num_3":8246465,"num_4":1},"sourceData":{"addTime":1610695813,"departmentId":0,"creatorId":{"avatar":"/images/default.jpg","id":"04232447501201390","name":"钱卿"},"discount":1,"text_10":"{\"12\":\"12\"}","ownerId":"04232447501201390","num_40":1,"text_11":["小谭的供应商"],"text_70":["22703"],"text_2":"CP.20210115000005.0","text_5":1,"text_7":"","text_9":["207196"],"text_8":{"text":"件","value":"1"},"num_11":0,"enableMultiUnit":0,"num_12":0,"file_1":["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/04232447501201390/jpeg/16106957648533e03bf04c9b5b2b5ffa1e42f9a5cbd76.jpeg?1610695764848"],"text_1":"商品测试","text_69":["测试仓库"],"updateTime":1610695813,"serialNo":"CP.20210115000005","num_5":0,"num_6":0,"num_7":0,"num_8":0,"num_1":0,"num_2":0,"num_3":8246465,"num_4":1}},"text_8":{"text":"件","value":"1"},"num_3":1,"num_1":0,"num_4":100,"num_6":0,"num_5":0,"text_3":undefined,"num_13":undefined,"num_15":undefined,"num_16":undefined,"num_12":undefined,"num_18":undefined,"text_9":undefined,"subId":"d99ba213-f265-00ae-5b01-a87614a093a7","editFlag":1,"refProductId":undefined,"enableMultiUnit":0,"unitRate":undefined,"transformUnitRate":undefined,"price":undefined}]
