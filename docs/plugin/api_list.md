@@ -50,7 +50,7 @@ xbb.getUserInfo().then(userInfo => {
 | action | data | 说明 |
 | ------ | ---- | --- |
 | openDetailPage | {appId, dataId, saasMark, businessType, subBusinessType} | 调用详情页 |
-| addNewForm | {appId, formId, saasMark, menuId, businessType, subBusinessType, cloudcodeData} | 调用新建表单页 |
+| addNewForm | {appId, formId, saasMark, menuId, businessType, subBusinessType, formData} | 调用新建表单页 |
 | showMessage | {type, content, time} | 调用message组件 |
 
 #### 返回值
