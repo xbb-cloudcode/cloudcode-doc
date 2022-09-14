@@ -762,38 +762,3 @@ export async function getEnv() {
   console.log(envInfo)
 }
 ```
-
-## 调用销帮帮CRM系统组件
-### sdk.useComponent(object)
-#### 参数
-`[Object object]`
-| 属性 | 类型 | 必填 | 说明 |
-| --- | --- |  ---- | --- |
-| action | String | 是 | 调用的组件名称 |
-| data | Object | 否 | 传递给组件的数据 |
-
-目前支持调用的组件如下:
-| action | data | 说明 |
-| ------ | ---- | --- |
-| openDetailPage | {appId, dataId, saasMark, businessType, subBusinessType} | 调用详情页 |
-| addNewForm | {appId, formId, saasMark, menuId, businessType, subBusinessType, formData} | 调用新建表单页 |
-| showMessage | {type, content, time} | 调用message组件 |
-
-#### 返回值
-`Promise<result>`组件的返回值
-#### 示例
-```javascript
-export async function useComponent() {
-  const result = await sdk.useComponent({
-    action: 'openDetailPage',
-    data: {
-      appId: '123',
-      dataId: '123',
-      saasMark: '101',
-      businessType: '100',
-      subBusinessType: 'customer'
-    }
-  })
-  console.log(result)
-}
-```
