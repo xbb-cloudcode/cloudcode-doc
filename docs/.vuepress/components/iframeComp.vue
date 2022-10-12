@@ -1,6 +1,6 @@
 <!--docs/.vuepress/components/iframeComp.vue-->
 <template>
-  <iframe class="video-iframe" width="100%" v-resize="{ log: true }" frameborder="no" scrolling="no" seamless="" allowfullscreen="allowfullscreen" :src="ihtml"></iframe>
+  <iframe class="video-iframe" width="100%" referrerpolicy="no-referrer" v-resize="{ log: true }" frameborder="no" scrolling="no" seamless="" allowfullscreen="allowfullscreen" :src="ihtml"></iframe>
 </template>
 
 <script>
