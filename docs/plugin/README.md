@@ -12,7 +12,7 @@
 
 ## 安装开发者工具(推荐但非必须)
 
-开发者工具提供了移动端模拟器和调试本地插件等功能，可[点此下载](/cloudcode-doc/devtool/)下载安装。
+开发者工具提供了移动端模拟器和调试本地插件等功能，可[点此下载](/devtool/)下载安装。
 
 ![开发者工具预览](/cloudcode-doc/images/devtool-preview.png)
 
