@@ -13,5 +13,7 @@
     "vuepress": "^1.7.1",
     "vuepress-plugin-fulltext-search": "^2.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vuepress-plugin-image-viewer": "^1.1.7"
+  }
 }
