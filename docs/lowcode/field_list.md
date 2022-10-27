@@ -52,7 +52,8 @@ const now = new Date().getTime()
 sdk.setValue('date_1', now / 1000)
 ```
 ### 单选按钮
-单选按钮的值通常是一个对象，结构固定为`{text:'', value: ''}`，字段标识为`text_*`。
+> 注意，自v4.59.0后销帮帮支持了选项颜色，如果想要正确的回显颜色，需要通过字段解释查询到对应的选项的颜色并一起赋值回去。
+单选按钮的值通常是一个对象，结构固定为`{text:'', value: '', color: ''}`，字段标识为`text_*`。（如果没有配置颜色，color 字段可不传）
 ```JavaScript
 // 获取值
 const data = await sdk.getValue('text_1')
@@ -65,7 +66,8 @@ sdk.setValue('text_1', { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5
 ![PaaS 字段](/cloudcode-doc/images/field-info-quey-options.jpg)
 复选框组、下拉框、下拉复选框同样也可以通过这样的操作获取到选项值。
 ### 复选框组
-复选框组的字段标识是`array_*`，他的值是一个数组，里面每一个元素都由`{text:'', value: ''}`组成
+> 注意，自v4.59.0后销帮帮支持了选项颜色，如果想要正确的回显颜色，需要通过字段解释查询到对应的选项的颜色并一起赋值回去。
+复选框组的字段标识是`array_*`，他的值是一个数组，里面每一个元素都由`{text:'', value: '', color: ''}`组成。（如果没有配置颜色，color 字段可不传）
 ```JavaScript
 const data = await sdk.getValue('array_1')
 console.log(data)
@@ -74,6 +76,7 @@ console.log(data)
 sdk.setValue('array_1', [{ text: '选项值1', value: '0727a962-f7f1-0030-77b9-984577cdd552' }, { text: '选项值2', value: 'a0614c6a-dde7-6448-7fdd-3a5be559e133' }])
 ```
 ### 下拉框
+> 注意，自v4.59.0后销帮帮支持了选项颜色，如果想要正确的回显颜色，需要通过字段解释查询到对应的选项的颜色并一起赋值回去。
 下拉框和单选按钮类似，但是需要注意的是，下拉框允许自己的选项为`关联其他表单数据`和`数据联动`，后两者所读取或者接收的参数都需要根据联动的表单来定义。
 > 当选项为常规的自定义选项时
 ```JavaScript
@@ -107,6 +110,7 @@ console.log(data)
 sdk.setValue('text_1', { text: '李四', value: '李四' })
 ```
 ### 下拉复选框
+> 注意，自v4.59.0后销帮帮支持了选项颜色，如果想要正确的回显颜色，需要通过字段解释查询到对应的选项的颜色并一起赋值回去。
 下拉复选框同样也可以设置选项为`自定义`、`关联其他表单数据`、`数据联动`，规则基本和下拉框一致，只是下拉复选框是数组。
 下拉复选框的字段标识为`array_*`
 > 当选项为常规的自定义时
@@ -172,6 +176,20 @@ console.log(data)
 // 赋值
 sdk.setValue('file_1', ["https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/1060661526-1904315290/jpg/16342813779849b65d7a37fa3ef4c80e42795947b51fa.jpg?1634281377984"])
 ```
+
+### 手签
+> 注意，我们不推荐通过低代码去修改手签字段，这样会违背了手签的本意
+手签字段值类型为字符串，字段标识是`file_*`，销帮帮可以接受任意来源的地址
+> 注意，由于浏览器限制必须要是 https 链接，并且做好Access-Control-Allow-Origin（跨域）的配置
+```JavaScript
+// 获取值
+const data = await sdk.getValue('file_1')
+console.log(data)
+// { value: "https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/1060661526-1904315290/jpg/16342813779849b65d7a37fa3ef4c80e42795947b51fa.jpg?1634281377984" }
+// 赋值
+sdk.setValue('file_1', "https://cdn3.xbongbong.com/xbbProPrd/ding012d1a0065f8b378ffe93478753d9884/1060661526-1904315290/jpg/16342813779849b65d7a37fa3ef4c80e42795947b51fa.jpg?1634281377984")
+```
+
 ### 附件
 附件字段的标识是`file_*`，附件字段是一个数组，元素为对象，对象内包含文件地址、文件类型、文件名、大小、uid（随机生成 id）
 ```JSON
