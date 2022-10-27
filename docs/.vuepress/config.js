@@ -36,7 +36,8 @@ module.exports = {
       '/cloud-dev/': [
         '',
         'func_environment',
-        'first_function'
+        'first_function',
+        'trigger'
       ],
       '/lowcode/': [
         '',
