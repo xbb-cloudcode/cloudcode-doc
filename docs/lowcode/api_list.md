@@ -778,6 +778,18 @@ export async function getEnv() {
 | openDetailPage | {appId, dataId, saasMark, businessType, subBusinessType} | 调用详情页 |
 | addNewForm | {appId, formId, saasMark, menuId, businessType, subBusinessType, formData} | 调用新建表单页 |
 | showMessage | {type, content, time} | 调用message组件 |
+| openCloudCodeDialog | openCloudCodeDialogData(详细说明见下方) | 调用云叩弹窗组件 |
+
+openCloudCodeDialogData有一个必填参数boxType,表示弹窗的类型，可选值为 `tipsSuccess`、`tipsWarn`、`tipsError`、`confirm`、`qiankun`。
+
+| boxType | 其余参数 | 说明 |
+| ------ | ---- | --- |
+| tipsSuccess | title: string, content: string | 成功弹窗 |
+| tipsWarn | title: string, content: string | 警告弹窗 |
+| tipsError | title: string, content: string | 失败弹窗 |
+| confirm | title: string, content: string | 含有确认操作的弹窗 |
+| qiankun | title: string, linkAppId: 云叩插件URL, size: 弹框宽度 | 云叩插件弹窗 |
+
 
 #### 返回值
 `Promise<result>`组件的返回值
@@ -796,4 +808,42 @@ export async function useComponent() {
   })
   console.log(result)
 }
+```
+
+#### 云叩弹窗示例
+```javascript
+// 低代码
+export async function openCloudCodeDialog() {
+    const res = await sdk.useComponent({
+        action: 'openCloudCodeDialog',
+        data: {
+            boxType: 'qiankun',
+            linkAppId: 'http://localhost:3000/index.html'
+        }
+    })
+    console.log(res)
+}
+```
+```html
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/xbb-sdk/index.js"></script>
+</head>
+<body>
+    <input type="text">
+    <script>
+        xbb.ready((props) => {
+            xbb.onMessage('closeDialog', (e) => {
+                xbb.closeContainer({ data: document.querySelector('input').value })
+            })
+        })
+    </script>
+</body>
+</html>
 ```
