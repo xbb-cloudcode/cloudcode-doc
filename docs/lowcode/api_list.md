@@ -647,7 +647,7 @@ export async function getType() {
 #### 示例
 ```javascript
 export async function example() {
-  const res = await xbb.cloud.callFunction({
+  const res = await sdk.cloud.callFunction({
     name: 'test',
     data: {
       a: 1,
@@ -673,7 +673,7 @@ export async function example() {
 #### 示例
 ```javascript
 export async function example() {
-  const res = await xbb.cloud.uploadFile({
+  const res = await sdk.cloud.uploadFile({
     cloudPath: 'test/test.png',
     file: file
   }) 
