@@ -25,11 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: install nvm
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+      - name: Use Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ cat .nvmrc }}
 
-      - name: switch node version
-        run: nvm use v16.16.0
 
       # Runs a single command using the runners shell
       - name: Run build script
